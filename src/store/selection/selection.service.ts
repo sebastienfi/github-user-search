@@ -1,10 +1,11 @@
 import { ID } from '@datorama/akita'
 import axios from 'axios'
-import { saveSession } from '../storage'
 
 import { Selection } from './selection.model'
 import { selectionQuery } from './selection.query'
 import { SelectionStore, selectionStore } from './selection.store'
+
+import { saveSession } from '../storage'
 
 export class SelectionService {
 	constructor(private selectionStore: SelectionStore) {}

@@ -1,7 +1,8 @@
 import { EntityState, EntityStore, StoreConfig } from '@datorama/akita'
-import { getSession } from '../storage'
 
 import { Selection } from './selection.model'
+
+import { getSession } from '../storage'
 
 export interface SelectionState extends EntityState<Selection> {
 	items: any
