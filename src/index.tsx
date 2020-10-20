@@ -1,11 +1,20 @@
+import './index.css'
+
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
+
+import { akitaDevtools } from '@datorama/akita'
+import CssBaseline from '@material-ui/core/CssBaseline'
+
 import * as serviceWorker from './serviceWorker'
+
+import App from './App'
+
+akitaDevtools()
 
 ReactDOM.render(
 	<React.StrictMode>
+		<CssBaseline />
 		<App />
 	</React.StrictMode>,
 	document.getElementById('root'),
