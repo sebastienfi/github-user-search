@@ -6,7 +6,8 @@ export const getSession = () => {
 }
 
 export const saveSession = session => {
-	localStorage.setItem(SESSION_KEY, JSON.stringify(session))
+	// TODO : debug le saveSession qui serialize pas.
+	// localStorage.setItem(SESSION_KEY, JSON.stringify(session))
 }
 
 export const clearSesssion = () => localStorage.removeItem(SESSION_KEY)
