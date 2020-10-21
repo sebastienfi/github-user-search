@@ -15,7 +15,6 @@ export class GitHubUserService {
 		this.gitHubUserStore.setLoading(true)
 		return from(axios.get(GitHubConfig.API_URL + GitHubConfig.SEARCH_USERS_ENDPOINT + '?q=' + encodeURI(search))).pipe(
 			tap(res => {
-				console.log('getUsers', res.data)
 				this.gitHubUserStore.set(res.data.items)
 				this.gitHubUserStore.setLoading(false)
 			}),

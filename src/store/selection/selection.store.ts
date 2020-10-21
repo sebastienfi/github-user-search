@@ -1,23 +1,20 @@
 import { EntityState, EntityStore, StoreConfig } from '@datorama/akita'
 
-import { Selection } from './selection.model'
+import { formatToSelectionKeyMap, Selection } from './selection.model'
 
 import { getSession } from '../storage'
 
 export interface SelectionState extends EntityState<Selection> {
-	items: any
+	entities: any
 }
 
-// export const initialSelectionState: SelectionState = {
-
-// 	items:
-
-// }
-
 export const createInitialSelectionState = (): SelectionState => {
-	return {
-		items: getSession(),
+	const sessionEntities = getSession()
+	const res = {
+		ids: sessionEntities.map(se => se.id),
+		entities: formatToSelectionKeyMap(sessionEntities),
 	}
+	return res
 }
 
 @StoreConfig({

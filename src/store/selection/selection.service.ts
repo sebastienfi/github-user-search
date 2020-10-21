@@ -12,7 +12,7 @@ export class SelectionService {
 
 	update(userId: ID, selection: Selection) {
 		this.selectionStore.upsert(userId, selection)
-		saveSession(selectionQuery.selectAll())
+		selectionQuery.selectAll().subscribe(items => saveSession(items))
 	}
 }
 

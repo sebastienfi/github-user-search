@@ -54,9 +54,6 @@ const SearchInputView = ({
 			debouncedOnChange(value)
 		}
 	}, [value])
-
-	console.log('SearchInputView', isLoading)
-
 	return (
 		<InputBase
 			{...restProps}
